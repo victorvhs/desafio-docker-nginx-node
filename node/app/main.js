@@ -27,9 +27,9 @@ app.get('/', (req, res) => {
     conn.query(`SELECT name FROM people`, (error, resp, fields) => {
         res.send(`
           <h1>Full Cycle!</h1>
-          <ol>
+          <ul>
             ${!!resp.length ? resp.map(elem => `<li>${elem.name}</li>`).join('') : ''}
-          </ol>
+          </ul>
         `)
     })
     conn.end()
